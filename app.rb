@@ -1,12 +1,10 @@
 require 'sinatra'
+require 'cheapshark'
 
-class ZakWebApp < Sinatra::Base
+class CheapSharkApp < Sinatra::Base
   get '/' do
-    erb :generator
-  end
-
-  get '/profile' do
-    erb :profile
+    @gameResults = cheapshark.get
+    erb :index
   end
 
 end
