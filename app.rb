@@ -1,11 +1,11 @@
-
 require 'sinatra'
+
 require 'cheapshark'
 
-class SearchGames < Sinatra::Base
+class CheapSharkApp < Sinatra::Base
   get '/' do
-    @games = CheapShark.games(title: params['title'] || ' ')
-    erb :home
+    @games = CheapShark.games(title: params['gameSearch'] || ' ')
+    erb :index
   end
 
 end

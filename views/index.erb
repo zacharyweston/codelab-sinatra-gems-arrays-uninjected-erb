@@ -2,23 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Find a Game</title>
+    <title>Search for Video Games</title>
   </head>
   <body>
-    <h1>Search Games</h1>
-    <div class="searchbox">
-      <h2>Search for a game by title</h2>
-      <form class="search">
-        <input type="text" name="title" placeholder="Enter game title">
-      </form>
-    </div>
-    <div class="results">
+    <form>
+      <h1>Video Game Search</h1>
+      <input type="text" name="gameSearch" placeholder="Search by Title">
+    </form>
       <h2>Search results</h2>
-      <ul>
+      <ol>
         <% @games.each do |game| %>
-          <li><img src="<%= game.thumb %>"><%= game.title %> | <a href="http://www.cheapshark.com/redirect.php?dealID=<%=game.cheapest_deal_id %>">$<%= game.cheapest %></a></li>
+          <li><img src="<%= game.thumb %>" alt="Game Thumbnail"><br /><%= game.title %> <br /><a href="http://www.cheapshark.com/redirect.php?dealID=<%=game.cheapest_deal_id %>">$<%= game.cheapest %></a><br /><br /></li>
         <% end %>
-      </ul>
-    </div>
+      </ol>
   </body>
 </html>
