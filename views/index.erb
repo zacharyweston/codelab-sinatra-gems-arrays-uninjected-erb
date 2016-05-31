@@ -12,7 +12,7 @@
       <h2>Best Deal Results</h2>
       <ol>
         <% @games.each do |game| %>
-          <li><img src="<%= game.thumb %>" alt="Game Thumbnail"><br /><%= game.title %> <br /><a href="http://www.cheapshark.com/redirect.php?dealID=<%=game.cheapest_deal_id %>">$<%= game.cheapest %></a><br /><br /></li>
+        <li><img src="<%= game.thumb %>" alt="Game Thumbnail"><br /><%= game.title %> <br /><a href="http://www.cheapshark.com/redirect.php?dealID=<%=game.cheapest_deal_id %>">$<%= game.cheapest %></a><br /><br /></li>
         <% end %>
       </ol>
   </body>
